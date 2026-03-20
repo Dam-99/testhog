@@ -35,7 +35,7 @@ jobs:
       backend--release_created: ${{ steps.release.outputs.backend--release_created }}
       backend--version: ${{ steps.release.outputs.backend--version }}
     steps:
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4
         id: release
         with:
           config-file: .github/release-please/config.json
