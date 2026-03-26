@@ -62,7 +62,7 @@ defmodule EdgehogWeb.Schema.Mutation.DeleteVolumeTest do
       error = [tenant: tenant, id: id] |> delete_volume_mutation() |> extract_error!()
 
       assert %{
-               path: ["deleteVolume"],
+               path: ["deleteVolume", "input", "id"],
                fields: [:id],
                code: "not_found",
                message: "could not be found"

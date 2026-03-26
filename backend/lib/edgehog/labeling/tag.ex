@@ -53,7 +53,7 @@ defmodule Edgehog.Labeling.Tag do
 
     read :read_assigned_to_devices do
       description "Returns Tags currently assigned to some device."
-      prepare build(filter: expr(exists(device_tags, true)))
+      prepare build(filter: expr(exists device_tags, true))
 
       pagination do
         required? false

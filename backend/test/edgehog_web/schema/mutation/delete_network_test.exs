@@ -62,7 +62,7 @@ defmodule EdgehogWeb.Schema.Mutation.DeleteNetworkTest do
       error = [tenant: tenant, id: id] |> delete_network_mutation() |> extract_error!()
 
       assert %{
-               path: ["deleteNetwork"],
+               path: ["deleteNetwork", "input", "id"],
                fields: [:id],
                code: "not_found",
                message: "could not be found"

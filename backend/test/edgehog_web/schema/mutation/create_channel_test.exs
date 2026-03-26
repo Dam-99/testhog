@@ -97,7 +97,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "name"],
                fields: [:name],
                message: "is required",
                code: "required"
@@ -113,7 +113,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "name"],
                fields: [:name],
                message: "has already been taken",
                code: "invalid_attribute"
@@ -137,7 +137,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "handle"],
                fields: [:handle],
                message: "is required",
                code: "required"
@@ -151,7 +151,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "handle"],
                fields: [:handle],
                message: "should only contain lower case ASCII letters (from a to z), digits and -",
                code: "invalid_attribute"
@@ -167,7 +167,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "handle"],
                fields: [:handle],
                message: "has already been taken",
                code: "invalid_attribute"
@@ -183,7 +183,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "targetGroups", "0", "id"],
                fields: [:target_group_ids],
                message: "One or more target groups could not be found",
                code: "not_found"
@@ -207,7 +207,7 @@ defmodule EdgehogWeb.Schema.Mutation.CreateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["createChannel"],
+               path: ["createChannel", "input", "targetGroups", "0", "channelId"],
                fields: [:channel_id],
                message: "The channel is already set for the device group " <> name,
                code: "invalid_attribute"

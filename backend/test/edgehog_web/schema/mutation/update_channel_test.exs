@@ -66,7 +66,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "name"],
                fields: [:name],
                code: "required",
                message: "is required"
@@ -82,7 +82,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "name"],
                fields: [:name],
                code: "invalid_attribute",
                message: "has already been taken"
@@ -96,7 +96,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "handle"],
                fields: [:handle],
                code: "required",
                message: "is required"
@@ -110,7 +110,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "handle"],
                fields: [:handle],
                code: "invalid_attribute",
                message: "should only contain lower case ASCII letters (from a to z), digits and -"
@@ -126,7 +126,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "handle"],
                fields: [:handle],
                code: "invalid_attribute",
                message: "has already been taken"
@@ -151,7 +151,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "targetGroups", "0", "id"],
                fields: [:target_group_ids],
                code: "not_found",
                message: "One or more target groups could not be found"
@@ -172,7 +172,7 @@ defmodule EdgehogWeb.Schema.Mutation.UpdateChannelTest do
         |> extract_error!()
 
       assert %{
-               path: ["updateChannel"],
+               path: ["updateChannel", "input", "0", "targetGroups", "0", "channelId"],
                fields: [:channel_id],
                code: "invalid_attribute",
                message: "The channel is already set for the device group " <> name
