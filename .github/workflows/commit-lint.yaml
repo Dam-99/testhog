@@ -53,6 +53,6 @@ jobs:
       - name: Extract commit messages
         run: git --no-pager log --pretty=%B origin/${{ github.base_ref }}..HEAD > commit-messages.txt
       - name: Spellcheck Commits
-        uses: crate-ci/typos@v1.44.0
+        uses: crate-ci/typos@cf5f1c29a8ac336af8568821ec41919923b05a83 # v1.45.1
         with:
           files: ./commit-messages.txt
